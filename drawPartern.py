@@ -1,8 +1,10 @@
 import turtle
 def draw():
     window = turtle.Screen()
-    window.bgcolor('orange')
+    window.bgcolor('gray')
     move = turtle.Turtle()
+    move.shape("turtle")
+    move.color('orange')
     i = 20
     while True:
         deg = 5
