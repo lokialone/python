@@ -7,6 +7,11 @@ __author__ = 'lokialone'
 
 import sys
 
+class Student(object):
+    @property
+    def name(self):
+        return self._name
+
 def test():
     args = sys.argv
     if len(args)==1:
