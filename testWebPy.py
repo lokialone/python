@@ -8,6 +8,7 @@ app = web.application(urls, globals())
 
 class index:
     def GET(self, name):
+        print open('index.html','r').read()
         return open('index.html','r').read()
 class hello:
     def GET(self, name):
