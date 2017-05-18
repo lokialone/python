@@ -13,7 +13,7 @@ def downloadPic(html,path):
         pic= requests.get(pic_url)
         string = '_' + str(i) + '.jpg'
         #resolve the problem of encode, make sure that chinese name could be store
-        fp = open(string.decode('utf-8').encode('cp936'),'wb')
+        fp = open(string,'wb')
         fp.write(pic.content)
         fp.close()
         i += 1
@@ -25,7 +25,7 @@ def createDir(url):
     return file_path
 
 if __name__ == '__main__':
-    url = raw_input("Input begin url: ")
+    url = input("Input begin url: ")
     file_path = createDir(url)
     result = requests.get(url)
     downloadPic(result.text,file_path)
