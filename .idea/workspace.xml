@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a74db364-be39-477d-9846-52196e5a308c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/neural-network/simple.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider-img/downloadPic.py" afterPath="$PROJECT_DIR$/spider-img/downloadPic.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider-img/index.py" afterPath="$PROJECT_DIR$/spider-img/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spider-web/downloadHtml.py" afterPath="$PROJECT_DIR$/spider-web/downloadHtml.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +47,8 @@
       <file leaf-file-name="downloadPic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider-img/downloadPic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="165">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="44" />
               <folding>
                 <element signature="e#22#31#0" expanded="true" />
               </folding>
@@ -58,11 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="simple.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="simple.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neural-network/simple.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,6 +113,7 @@
         <option value="$PROJECT_DIR$/ApiCreate/getApi.py" />
         <option value="$PROJECT_DIR$/spider-img/index.py" />
         <option value="$PROJECT_DIR$/spider-img/downloadPic.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -175,7 +184,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="neural-network" />
+              <option name="myItemId" value="spider-img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,24 +479,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ApiCreate/getApi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#170#185#0" expanded="true" />
-            <element signature="e#377#575#0" expanded="false" />
-            <element signature="e#603#912#0" expanded="false" />
-            <element signature="e#1261#1486#0" expanded="false" />
-            <element signature="e#1517#1670#0" expanded="false" />
-            <element signature="e#1701#1859#0" expanded="false" />
-            <element signature="e#1882#2047#0" expanded="false" />
-            <element signature="e#2091#2692#0" expanded="false" />
-            <element signature="e#2713#3112#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider-img/index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -820,24 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ApiCreate/getApi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding>
-            <element signature="e#170#185#0" expanded="true" />
-            <element signature="e#377#575#0" expanded="false" />
-            <element signature="e#603#912#0" expanded="false" />
-            <element signature="e#1261#1486#0" expanded="false" />
-            <element signature="e#1517#1670#0" expanded="false" />
-            <element signature="e#1701#1859#0" expanded="false" />
-            <element signature="e#1882#2047#0" expanded="false" />
-            <element signature="e#2091#2692#0" expanded="false" />
-            <element signature="e#2713#3112#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider-img/index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -856,10 +843,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ApiCreate/getApi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <folding>
+            <element signature="e#170#185#0" expanded="true" />
+            <element signature="e#377#575#0" expanded="false" />
+            <element signature="e#603#912#0" expanded="false" />
+            <element signature="e#1261#1486#0" expanded="false" />
+            <element signature="e#1517#1670#0" expanded="false" />
+            <element signature="e#1701#1859#0" expanded="false" />
+            <element signature="e#1882#2047#0" expanded="false" />
+            <element signature="e#2091#2692#0" expanded="false" />
+            <element signature="e#2713#3112#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider-img/downloadPic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="165">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="44" />
           <folding>
             <element signature="e#22#31#0" expanded="true" />
           </folding>
@@ -870,6 +875,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
