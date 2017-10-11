@@ -7,6 +7,7 @@ import urlparse
 import robotparser
 import datetime
 import time
+import lxml.html
 
 #simple
 def download(url,user_agent= 'wswp', proxy=None, num_retries=2):
@@ -80,25 +81,56 @@ class Throttle:
                 time.sleep(sleep_secs)
         self.domains[domain] = datetime.datetime.now()
 
+def normalize(seed_url, link):
+    """Normalize this URL by removing hash and adding domain
+    """
+    link, _ = urlparse.urldefrag(link) # remove hash to avoid duplicates
+    return urlparse.urljoin(seed_url, link)
+
+def same_domain(url1, url2):
+    """Return True if both URL's belong to same domain
+    """
+    return urlparse.urlparse(url1).netloc == urlparse.urlparse(url2).netloc
+
+#html content extract
+FIELDS = {'area', 'population', 'ios', 'country', 'capital', 'continent', 'tld'}
+def lxml_scrapper(html):
+    tree = lxml.html.fromstring(html)
+    res = {}
+    for field in FIELDS:
+        res[field] = tree.cssselect('table > tr#places_%s__row > td.w2p_fw' % field)[0].text_content()
+    return res
+
 # link crawling
-def link_crawler(seed_url, link_regex, max_depth=2):
+def link_crawler(seed_url, link_regex=None, delay=0, scrape_callback=None, max_depth=2,):
     crawl_queue = [seed_url]
-    # crawl_queue = Queue.deque([seed_url])
     seen = {seed_url: 0}
     # track how many URL's have been downloaded
-    throttle = Throttle(1)
+    throttle = Throttle(delay)
     while crawl_queue:
         url = crawl_queue.pop()
         throttle.wait(url)
         html = download(url)
         depth = seen[url]
+        links = []
+        if scrape_callback:
+            links.extend(scrape_callback(url, html) or [])
         if depth != max_depth:
-            for link in get_links(html):
-                if re.search(link_regex, link):
-                    link = urlparse.urljoin(seed_url, link)
+            if link_regex:
+                # filter for links matching our regular expression
+                links.extend(link for link in get_links(html) if re.search(link_regex, link))
+                # print links
+            # else:
+            #     links.extend(link for link in get_links(html)
+            for link in links:
+                    link = normalize(seed_url, link)
+                    # check whether already crawled this link
                     if link not in seen:
                         seen[link] = depth + 1
-                        crawl_queue.append(link)
+                        # check link is within same domain
+                        if same_domain(seed_url, link):
+                            # success! add this new link to queue
+                            crawl_queue.append(link)
 
     
 
@@ -118,4 +150,4 @@ if __name__ == '__main__':
     # url = input("Input begin url: ")
     # crawl_sitemap('http://example.webscraping.com/sitemap.xml')
     # crawling_id();
-    link_crawler('http://example.webscraping.com', '/(index|view)', 1)
+    link_crawler('http://example.webscraping.com', '/(index|view)')
