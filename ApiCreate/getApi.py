@@ -1,7 +1,7 @@
 #@Author: lokialone
 # @Date:   2017-05-08 23:53:30
 # @Last Modified by:   lokialone
-# @Last Modified time: 2017-05-09 02:19:50
+# @Last Modified time: 2017-06-06 21:11:12
 #get api from swapper
 #!/usr/bin/python3
  
@@ -9,7 +9,7 @@ import requests
 import os
 from mako.template import Template
 
-SWAGGER_URL = 'http://2577.wdtest.chebaba.com/api-docs'
+SWAGGER_URL = 'http://115.29.10.121:10010/api-docs'
 api_all = {}
 base = os.path.abspath('.')
 os.chdir(base)
@@ -35,11 +35,6 @@ def deal_path(path):
     apipath = deal_apipath(arr)
     filedir = deal_filedir(arr)
     return {'filename': filename, 'apiname': apiname, 'apipath': apipath, 'filedir': filedir}
-
-
-def file_headerString():
-    return """import instance from '~api/_instance';\n"""
-
 
 def deal_filename(name):
     if name.startswith('{'):
@@ -73,6 +68,8 @@ def deal_apipath(path):
             res.append(x)
     return '/'.join(res)
 
+def file_headerString():
+    return """import instance from '~api/_instance';\n"""
 
 def template1():
     return """
@@ -97,8 +94,6 @@ function ${apiname} (${data}) {
 }
     """
 
-
-
 def writeApi(path, method, params):
     res = deal_path(path)
     if not os.path.exists(res['filedir']):
@@ -119,16 +114,17 @@ def writeApi(path, method, params):
 
 def create():
     res_all = requests.get(SWAGGER_URL)
+    print(res_all)
     api_all = res_all.json()['apis']
-    for x in api_all:
-        res = requests.get(SWAGGER_URL+'/'+x['path'])
-        apis = res.json()['apis']
-        for y in apis:
-            path = y['path']
-            params = deal_parameters(y['operations'][0]['parameters'])
-            method = y['operations'][0]['method']
-
-            writeApi(path, method, params)
+    print(api_all)
+    # for x in api_all:
+    #     res = requests.get(SWAGGER_URL+'/'+x['path'])
+    #     apis = res.json()['apis']
+    #     for y in apis:
+    #         path = y['path']
+    #         params = deal_parameters(y['operations'][0]['parameters'])
+    #         method = y['operations'][0]['method']
+    #         writeApi(path, method, params)
 
 if __name__ == '__main__':
     create()

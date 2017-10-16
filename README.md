@@ -5,3 +5,6 @@ play python
 ## spider-img
 从http://dynasty-scans.com/网站下载漫画本子。。。绅士0.0
 
+## imgFilter
+图像滤镜
+
