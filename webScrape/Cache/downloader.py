@@ -22,7 +22,6 @@ class Downloader:
         self.opener = opener
         self.cache = cache
 
-
     def __call__(self, url):
         result = None
         if self.cache:
@@ -65,7 +64,7 @@ class Downloader:
                 code = e.code
                 if num_retries > 0 and 500 <= code < 600:
                     # retry 5XX HTTP errors
-                    return self._get(url, headers, proxy, num_retries-1, data)
+                    return self.download(url, headers, proxy, num_retries-1, data)
             else:
                 code = None
         return {'html': html, 'code': code}

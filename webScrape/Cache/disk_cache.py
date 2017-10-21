@@ -1,3 +1,4 @@
+#!/usr/bin/env python2.7
 import os
 import re
 import urlparse
@@ -79,7 +80,7 @@ class DiskCache:
     def __delitem__(self, url):
         """Remove the value at this key and any empty parent sub-directories
         """
-        path = self._key_path(url)
+        path = self.url_to_path(url)
         try:
             os.remove(path)
             os.removedirs(os.path.dirname(path))
