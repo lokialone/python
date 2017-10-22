@@ -18,3 +18,4 @@ posts = db.posts
 
 if __name__ == "__main__":
     pprint.pprint(posts.find_one())
+    pprint.pprint(posts.count())
