@@ -3,6 +3,7 @@ import cookielib
 import glob
 import os
 import json
+import browsercookie
 
 LOGIN_URL = 'http://example.webscraping.com/places/default/user/login?_next=/places/default/index'
 LOGIN_EMAIL = 'example@webscraping.com'
@@ -69,6 +70,12 @@ def login_firfox():
     session_filename = find_ff_sessions()
     # load_ff_sessions(session_filename)
 
+def login_browse_cookie():
+    cj = browsercookie.chrome()
+    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+    login_html = opener.open(LOGIN_URL).read()
+
 if __name__ == '__main__':
     # login_cookies()
     # login_firfox()
+    login_browse_cookie()
