@@ -2,7 +2,8 @@ import numpy as np
 import cv2
 
 cap = cv2.VideoCapture(0)
-
+#打包文件
+#pyinstaller -F video.py
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
