@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('road.png', 0)
-#use plt shwo img
-# plt.imshow(img, cmap='gray', interpolation='bicubic')
-# plt.xticks([]), plt.yticks([]) # to hide tick values on X and Y axis
-# plt.show()
-
-cv2.imshow('image',img)
+img = cv2.imread('test.jpeg', 0)
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+lower_blue = np.array([110,50,50])
+upper_blue = np.array([130,255,255])
+mask_blue = cv2.inRange(hsv, lower_blue, upper_blue)
+res = cv2.bitwise_and(img,img, mask= mask_blue)
+cv2.imshow('res',res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
